@@ -1,0 +1,45 @@
+<div class="form-container flex">
+  @if (currentStep === 1) {
+    <main>
+      <section class="mb-12">
+        <h1 class="font-serif text-3xl mb-2">Basic Details</h1>
+        <p class="text-stone-500 font-light text-sm leading-relaxed">
+          Let's begin crafting your unique wedding gallery experience.
+        </p>
+      </section>
+      <form [formGroup]="step1Form" class="flex flex-col">
+        <input formControlName="name" type="text" placeholder="Name" />
+        <input formControlName="partnerName" type="text" placeholder="Partner Name" />
+        <input formControlName="weddingDate" type="date" placeholder="Wedding Date" />
+        <input formControlName="weddingLocation" type="text" placeholder="Wedding Location" />
+        <button (click)="nextStep()" [disabled]="step1Form.invalid">Next</button>
+      </form>
+    </main>
+  }
+
+  @if (currentStep === 2) {
+    <div>
+      <h2>Step 2: Public Information</h2>
+      <form [formGroup]="step2Form" class="flex flex-col">
+        <input formControlName="isPublic" type="checkbox" placeholder="Public" />
+        <input formControlName="galleryPassword" type="password" placeholder="Gallery Password" />
+        <input
+          formControlName="isGuestCommentAllowed"
+          type="checkbox"
+          placeholder="Guest Comments"
+        />
+        <button (click)="nextStep()" [disabled]="step2Form.invalid">Next</button>
+      </form>
+    </div>
+  }
+
+  @if (currentStep === 3) {
+    <div>
+      <h2>Step 3: Cover Photo</h2>
+      <form [formGroup]="step3Form">
+        <input formControlName="coverPhoto" type="file" placeholder="Cover Photo" />
+        <button type="submit" (click)="onSubmit()">Submit</button>
+      </form>
+    </div>
+  }
+</div>
