@@ -32,4 +32,10 @@ export const routes: Routes = [
       return import('./pages/app/onboarding/onboarding').then((m) => m.Onboarding);
     },
   },
+  {
+    path: 'app/home',
+    loadComponent: () => {
+      return import('./pages/app/home/home').then((m) => m.Home);
+    },
+  },
 ];
