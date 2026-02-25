@@ -1,39 +1,38 @@
-<main>
+<main class="max-w-5/6 mx-auto">
   <section>
-  <h1>Welcome,<br>Sophie & Marc</h1>
-  <h2>12 Days until your Wedding</h2>
-    </section>
-  <section>
-    <img src="https://placehold.co/400x600" alt="">
+    <h1 class="font-display text-5xl">Welcome,<br>Sophie & Marc</h1>
+    <h2 class="uppercase font-body"><span class="text-mainrose">12</span> Days until your Wedding</h2>
   </section>
   <section>
-    <p>
-    1,248 Photos
-    </p>
-    <p>
-      142 Guests
-    </p>
-    <p>
-      3.8k Views
-    </p>
+    <img src="https://placehold.co/400x500" alt="">
   </section>
-  <section>
-    <div>
-    <p>Live Gallery</p>
-      <p>LIVE NOW</p>
-      </div>
-    <div>
-      <img src="https://placehold.co/200x200" alt="">
-      <img src="https://placehold.co/200x200" alt="">
-      <img src="https://placehold.co/200x200" alt="">
+  <app-home-stats></app-home-stats>
+  <section class="flex flex-col gap-5">
+    <div class="flex justify-between items-baseline">
+      <p class="font-display text-2xl">Live Gallery</p>
+      <p class="font-body text-mainrose font-bold">LIVE NOW</p>
     </div>
-    <button>DOWNLOAD ALL PHOTOS</button>
+    <div class="flex gap-2">
+      @for (photo of photos; track photo.url) {
+        <div class="relative min-w-0 w-full aspect-square">
+          <img [src]="photo.url" alt="" class="rounded-lg w-full h-full object-cover">
+          @if (photo.extraCount) {
+            <div class="absolute inset-0 bg-black/40 rounded-sm flex items-center justify-center">
+              <span class="text-white text-xl font-display">+{{ photo.extraCount }}</span>
+            </div>
+          }
+        </div>
+      }
+    </div>
+    <button class="w-full bg-mainrose text-white font-body  py-4">DOWNLOAD ALL PHOTOS</button>
   </section>
-  <section>
-    <p>Event QR Code</p>
-    <p>Share this with your Guests</p>
-    <img src="https://placehold.co/200x200" alt="">
-    <button>Download for Print</button>
-    <button>Copy Gallery Link</button>
+  <section class="bg-mainblack rounded-4xl text-mainsilk flex items-center flex-col my-10 p-10 gap-5">
+    <div class="flex flex-col items-center">
+    <p class="text-4xl font-display">Event QR Code</p>
+    <p class="font-body text-gray-400 text-sm">Share this with your Guests</p>
+      </div>
+    <img src="https://placehold.co/200x200" alt="" class="rounded-2xl">
+    <button class="text-mainrose border border-mainrose rounded-full px-8 py-2 uppercase text-xs font-bold">Download for Print</button>
+    <button class="uppercase text-sm  tracking-widest">Copy Gallery Link</button>
   </section>
 </main>

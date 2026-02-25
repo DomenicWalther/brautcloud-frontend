@@ -2,6 +2,24 @@
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+}
+
 @theme {
-    --color-mainrose: rgb(197,160,89);
+  --color-mainrose: #C5A059;
+  --color-mainsilk: #FAF9F6;
+  --color-mainblack: #1A1A1A;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter' , sans-serif;
 }
