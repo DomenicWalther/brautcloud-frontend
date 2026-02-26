@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-home-stats',
@@ -7,16 +7,19 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class HomeStats {
-  stats = [
+  statInput = input.required<{ photos: string; guests: string; views: string }>();
+  stats = computed(() => [
     {
-      value: '1,247', label: 'Photos'
+      value: this.statInput().photos,
+      label: 'Photos',
     },
     {
-      value: '142', label: 'Guests'
+      value: this.statInput().guests,
+      label: 'Guests',
     },
     {
-      value: '3.8k', label: 'Views'
+      value: this.statInput().views,
+      label: 'Views',
     },
-  ];
-
+  ]);
 }
