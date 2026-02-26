@@ -38,4 +38,16 @@ export const routes: Routes = [
       return import('./pages/app/home/home').then((m) => m.Home);
     },
   },
+  {
+    path: 'app/upload',
+    loadComponent: () => {
+      return import('./pages/app/image-upload/image-upload').then((m) => m.ImageUpload);
+    },
+  },
+  {
+    path: 'app/gallery',
+    loadComponent: () => {
+      return import('./pages/app/image-gallery/image-gallery').then((m) => m.ImageGallery);
+    },
+  },
 ];
