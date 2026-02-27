@@ -4,7 +4,7 @@ import { Component, input } from '@angular/core';
   selector: 'app-experience-element',
   imports: [],
   templateUrl: './experience-element.html',
-  styles: ``,
+  standalone: true,
 })
 export class ExperienceElement {
   badge = input.required<string>();

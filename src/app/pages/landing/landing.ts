@@ -1,11 +1,13 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ExperienceElement } from './experience-element/experience-element';
+import {LandingCtaSection} from './landing-cta-section/landing-cta-section';
+import {LandingExperienceSection} from './landing-experience-section/landing-experience-section';
+import {LandingHero} from './landing-hero/landing-hero';
 @Component({
   selector: 'app-landing',
-  imports: [RouterLink, RouterLinkActive, NgOptimizedImage, ExperienceElement],
+  imports: [LandingCtaSection, LandingExperienceSection, LandingHero],
   templateUrl: './landing.html',
-  styles: ``,
+  standalone: true,
 })
 export class Landing {}
